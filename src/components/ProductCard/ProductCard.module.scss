@@ -1,0 +1,170 @@
+.root {
+}
+.product {
+  padding: 5px 5px 10px 5px;
+  border: 1px solid #e6e6e6;
+  position: relative;
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+
+  @media (any-hover: hover) {
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+      z-index: 2;
+      border: 1px solid var(--successDark);
+      box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
+
+      & .title {
+        color: var(--successDark);
+      }
+
+      & img {
+        transform: scale(1.1);
+      }
+
+      & .heart {
+        top: 10px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+.sale {
+  pointer-events: none;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 3px 8px;
+  background-color: #ea4b48;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 150%;
+  z-index: 2;
+}
+.image {
+  display: block;
+  padding-bottom: 90%;
+  margin-bottom: auto;
+  @media (any-hover: hover) {
+    overflow: hidden;
+    & img {
+      transition: transform 0.3s ease;
+    }
+  }
+}
+.content {
+  padding: 0 7px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.title {
+  color: #4d4d4d;
+  font-size: 14px;
+  line-height: 120%;
+  margin-bottom: 10px;
+  @media (any-hover: hover) {
+    transition: color 0.3s ease;
+  }
+}
+.price {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.oldPrice {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+.addToCartBtn {
+  align-self: flex-end;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  & svg path {
+    transition: fill 0.3s ease;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--success);
+      & svg path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.heart {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #f2f2f2;
+  background-color: #fff;
+  transition: background-color 0.3s ease, transform 0.15s ease,
+    opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+  // transition: all 0.3s ease;
+
+  @media (any-hover: hover) {
+    opacity: 0;
+    visibility: hidden;
+    top: -10px;
+  }
+
+  & svg path {
+    transition: fill 0.3s ease;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--success);
+      & svg path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.inCart {
+  & .addToCartBtn {
+    background-color: var(--successDark) !important;
+  }
+  & .addToCartBtn svg path {
+    fill: #fff;
+  }
+}

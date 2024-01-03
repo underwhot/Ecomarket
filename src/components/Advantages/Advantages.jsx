@@ -1,0 +1,54 @@
+import { Containter } from '../Container/Containter';
+import styles from './Advantages.module.scss';
+
+import shipping from '../../assets/advantages/shipping.svg';
+import support from '../../assets/advantages/support.svg';
+import secure from '../../assets/advantages/secure.svg';
+import guarantee from '../../assets/advantages/guarantee.svg';
+
+export const Advantages = () => {
+  return (
+    <Containter>
+      <div className={styles.root}>
+        <ul className={styles.list}>
+          <li className={styles.item}>
+            <div className={styles.image}>
+              <img src={shipping} alt="shipping" />
+            </div>
+            <div className={styles.text}>
+              <h2 className={styles.title}>Free Shipping</h2>
+              <p className={styles.desc}>Free shipping on all your order</p>
+            </div>
+          </li>
+          <li className={styles.item}>
+            <div className={styles.image}>
+              <img src={support} alt="support" />
+            </div>
+            <div className={styles.text}>
+              <h2 className={styles.title}>Customer Support 24/7</h2>
+              <p className={styles.desc}>Instant access to Support</p>
+            </div>
+          </li>
+          <li className={styles.item}>
+            <div className={styles.image}>
+              <img src={secure} alt="secure" />
+            </div>
+            <div className={styles.text}>
+              <h2 className={styles.title}>100% Secure Payment</h2>
+              <p className={styles.desc}>We ensure your money is save</p>
+            </div>
+          </li>
+          <li className={styles.item}>
+            <div className={styles.image}>
+              <img src={guarantee} alt="guarantee" />
+            </div>
+            <div className={styles.text}>
+              <h2 className={styles.title}>Money-Back Guarantee</h2>
+              <p className={styles.desc}>30 Days Money-Back Guarantee</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </Containter>
+  );
+};

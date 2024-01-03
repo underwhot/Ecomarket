@@ -1,0 +1,5 @@
+.slider swiper-container::part(container) {
+  @media (max-width: 992px) {
+    overflow: visible !important;
+  }
+}

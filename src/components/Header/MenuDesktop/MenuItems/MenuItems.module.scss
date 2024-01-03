@@ -1,0 +1,43 @@
+.item {
+  position: relative;
+  padding: 6px 15px;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.link {
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #666;
+
+  & svg {
+    transition: transform 0.3s ease;
+  }
+
+  @media (any-hover: hover) {
+    transition: color 0.3s ease;
+    svg path {
+      transition: fill 0.3s ease;
+    }
+    &:hover {
+      color: var(--success);
+      svg path {
+        fill: var(--success);
+      }
+    }
+  }
+}
+
+.active {
+  color: var(--success);
+  & svg {
+    transform: rotate(180deg);
+  }
+  svg path {
+    fill: var(--success);
+  }
+}

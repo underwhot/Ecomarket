@@ -1,0 +1,144 @@
+.footer {
+  color: #fff;
+  background-color: #1a1a1a;
+  line-height: 150%;
+}
+.topRow {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  border-bottom: 1px solid #333333;
+  @media (max-width: 1200px) {
+    gap: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media (max-width: 992px) {
+    display: block;
+  }
+}
+.info {
+  flex: 1 1 360px;
+  & > * {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  @media (max-width: 992px) {
+    margin-bottom: 30px;
+  }
+}
+.text {
+  font-size: 14px;
+  line-height: 150%;
+  color: #808080;
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
+}
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  span {
+    color: #808080;
+  }
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    span {
+      display: none;
+    }
+  }
+}
+.contactLink {
+  white-space: nowrap;
+  font-size: 14px;
+  padding-bottom: 6px;
+  font-weight: 500;
+  line-height: 150%;
+  border-bottom: 1px solid var(--success);
+  @media (any-hover: hover) {
+    transition: border-color 0.3s ease;
+    &:hover {
+      border-color: var(--successDark);
+    }
+  }
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
+}
+.menu {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+.column {
+  flex: 1 1 25%;
+  @media (max-width: 600px) {
+    flex: 1 1 calc(50% - 30px);
+  }
+}
+.menuTitle {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  @media (max-width: 992px) {
+    font-size: 18px;
+  }
+}
+.menuList {
+}
+.menuItem {
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+.menuLink {
+  line-height: 100%;
+  font-size: 14px;
+  color: #999;
+  @media (any-hover: hover) {
+    transition: color 0.3s ease;
+    &:hover {
+      color: #fff;
+    }
+  }
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
+}
+
+.botRow {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  @media (max-width: 600px) {
+    font-size: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.copy {
+  font-size: 14px;
+  color: #808080;
+}
+.paymentList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

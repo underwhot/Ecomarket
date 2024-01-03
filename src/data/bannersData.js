@@ -1,0 +1,32 @@
+export const banners = [
+  {
+    id: 'id-1',
+    title: 'Welcome to shopery',
+    subtitle: 'Fresh & Healthy Organic Food',
+    url:'/',
+    imgUrl: '/src/assets/banners/01.png',
+    offer: 'Sale up to',
+    sale: '30% OFF',
+    text: 'Free shipping on all your order. we deliver, you enjoy',
+  },
+  {
+    id: 'id-2',
+    title: 'Summer Sale',
+    subtitle: 'Special Products Deal',
+    url:'/',
+    imgUrl: '/src/assets/banners/02.png',
+    offer: 'Started at',
+    sale: '$79.99',
+    text: 'Every day fresh and quality products for you.',
+  },
+  {
+    id: 'id-3',
+    title: 'Best Deal',
+    subtitle: '100% Trusted Organic',
+    url:'/',
+    imgUrl: '/src/assets/banners/03.png',
+    offer: 'Up to',
+    sale: '64% OFF',
+    text: 'Healthy & natural food for lovers of healthy food.',
+  },
+]

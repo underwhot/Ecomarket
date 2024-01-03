@@ -1,0 +1,17 @@
+.header {
+  background-color: #fff;
+  position: fixed;
+
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: top 0.5s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  @media (min-width: 768px) {
+    top: -200px;
+    &.show {
+      top: 0;
+    }
+  }
+}

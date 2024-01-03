@@ -1,0 +1,38 @@
+.item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 5px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #666;
+  & svg {
+    transform: rotate(180deg);
+  }
+
+  &.active {
+    color: var(--success);
+    & svg {
+      transform: rotate(0deg);
+      & path {
+        fill: var(--success);
+      }
+    }
+  }
+}
+
+.link {
+  display: inline-block;
+  font-size: 20px;
+  padding: 5px 0;
+  font-weight: 500;
+  color: #666;
+}

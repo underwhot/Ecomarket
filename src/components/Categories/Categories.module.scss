@@ -1,0 +1,19 @@
+.slider swiper-container::part(container) {
+  @media (max-width: 992px) {
+    overflow: visible !important;
+  }
+}
+
+.slider .scrollbar  {
+  background-color: var(--success);
+  // opacity: 0.8;
+  position: relative;
+  height: 8px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 15px;
+  z-index: 50;
+}
+.slider .scrollbar {
+  background: red !important;
+}

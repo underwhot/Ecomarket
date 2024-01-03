@@ -1,0 +1,28 @@
+.dropdown {
+  position: absolute;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  padding: 15px 0;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  min-width: 150px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.dropdown-submenu {
+  top: 0;
+  left: 100%;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  pointer-events: all;
+}

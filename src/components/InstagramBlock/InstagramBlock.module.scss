@@ -1,0 +1,71 @@
+.list {
+  display: flex;
+  gap: 24px;
+  @media (max-width: 1200px) {
+    gap: 15px;
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+}
+.item {
+  flex: 0 1 16.666%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  @media (max-width: 768px) {
+    flex: 1 1 calc(33.333% - 15px);
+  }
+
+  a {
+    display: block;
+    padding-bottom: 100%;
+    @media (any-hover: hover) {
+      &::before {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #2b572e;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 2;
+        transition: all 0.3s ease;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background-image: url('../../assets/instagramPosts/logoInst.svg');
+        background-size: 24px 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        transform: scale(0);
+      }
+      &:hover {
+        &::before {
+          top: 0;
+          opacity: 0.8;
+          visibility: visible;
+        }
+        &::after {
+          opacity: 1;
+          transform: scale(1);
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

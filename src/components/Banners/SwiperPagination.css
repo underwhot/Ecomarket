@@ -1,0 +1,20 @@
+.swiper-pagination {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.swiper-pagination-bullet {
+  cursor: pointer;
+  width: 20px;
+  height: 6px;
+  background-color: var(--success);
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
