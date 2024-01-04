@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import { Banner } from './Banner';
 
 import styles from './Banners.module.scss';
@@ -49,7 +49,7 @@ export const Banners = () => {
 
   return (
     <div className={styles.containerBig}>
-      <Containter>
+      <Container>
         <div className={styles.slider}>
           <swiper-container ref={swiperRef} init="false">
             {banners.map((banner) => (
@@ -59,7 +59,7 @@ export const Banners = () => {
             ))}
           </swiper-container>
         </div>
-      </Containter>
+      </Container>
     </div>
   );
 };

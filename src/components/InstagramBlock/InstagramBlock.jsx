@@ -1,4 +1,4 @@
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import { SectionTop } from '../UI/SectionTop/SectionTop';
 import styles from './InstagramBlock.module.scss';
 
@@ -13,7 +13,7 @@ const instagrama = 'https://www.instagram.com/';
 
 export const InstagramBlock = () => {
   return (
-    <Containter>
+    <Container>
       <SectionTop title='Follow us on Instagram'/>
       <ul className={styles.list}>
         <li className={styles.item}><a target='blank' href={instagrama} className='ibg'><img src={post_01} alt="instagram" /></a></li>
@@ -23,6 +23,6 @@ export const InstagramBlock = () => {
         <li className={styles.item}><a target='blank' href={instagrama} className='ibg'><img src={post_05} alt="instagram" /></a></li>
         <li className={styles.item}><a target='blank' href={instagrama} className='ibg'><img src={post_06} alt="instagram" /></a></li>
       </ul>
-    </Containter>
+    </Container>
   )
 }

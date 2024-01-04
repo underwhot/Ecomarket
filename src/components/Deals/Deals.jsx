@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import { Deal } from './Deal';
 import styles from './Deals.module.scss';
 
@@ -62,7 +62,7 @@ export const Deals = () => {
   }, []);
 
   return (
-    <Containter>
+    <Container>
       <div className={styles.slider}>
         <swiper-container ref={swiperRef} init="false">
           <swiper-slide>
@@ -97,6 +97,6 @@ export const Deals = () => {
           </swiper-slide>
         </swiper-container>
       </div>
-    </Containter>
+    </Container>
   );
 };

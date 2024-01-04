@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import { SectionTop } from '../UI/SectionTop/SectionTop';
 import { Testimonial } from './Testimonial';
 
@@ -54,7 +54,7 @@ export const Testimonials = () => {
   }, []);
 
   return (
-    <Containter>
+    <Container>
       <SectionTop title="Client Testimonials" />
       <div className={styles.slider}>
         <swiper-container ref={swiperRef} init="false">
@@ -65,6 +65,6 @@ export const Testimonials = () => {
           ))}
         </swiper-container>
       </div>
-    </Containter>
+    </Container>
   );
 };

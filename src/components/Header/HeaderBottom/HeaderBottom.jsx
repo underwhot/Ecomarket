@@ -1,4 +1,4 @@
-import { Containter } from '../../Container/Containter';
+import { Container } from '../../Container/Container';
 import { Navbar } from '../MenuDesktop/Navbar/Navbar';
 
 import { contactsData } from '../../../data/contactsData';
@@ -8,7 +8,7 @@ import styles from './HeaderBottom.module.scss';
 export const HeaderBottom = ({isVisible}) => {
   return (
     <div className={styles['header-bot']}>
-      <Containter>
+      <Container>
         <div className={styles['header-bot__row']}>
           <Navbar isVisible={isVisible}/>
           <a
@@ -44,7 +44,7 @@ export const HeaderBottom = ({isVisible}) => {
             {contactsData.mainPhoneNumber}
           </a>
         </div>
-      </Containter>
+      </Container>
     </div>
   );
 };

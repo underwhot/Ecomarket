@@ -1,4 +1,4 @@
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import { Logotype } from '../Logotype/Logotype';
 import { footerItemsData } from '../../data/footerItemsData';
 import { contactsData } from '../../data/contactsData';
@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Containter>
+      <Container>
         <div className={styles.topRow}>
           <div className={styles.info}>
             <Logotype color="white" />
@@ -72,7 +72,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-      </Containter>
+      </Container>
     </footer>
   );
 };

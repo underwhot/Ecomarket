@@ -1,0 +1,31 @@
+.breadcrumbsList {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.breadcrumbsItem {
+  &:not(:last-child) {
+    &::after {
+      content: '>';
+      margin-left: 12px;
+    }
+  }
+}
+.breadcrumbsLink {
+  line-height: 150%;
+  color: #666;
+  text-transform: capitalize;
+  @media (any-hover: hover) {
+    transition: color 0.3s ease;
+    svg path {
+      transition: fill 0.3s ease;
+    }
+    &:hover {
+      color: var(--success);
+      svg path {
+        fill: var(--success);
+      }
+    }
+  }
+}

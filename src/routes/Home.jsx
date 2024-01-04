@@ -43,9 +43,6 @@ export const Home = () => {
       <section className="section section_mb">
         <InstagramBlock />
       </section>
-      <section className="section section_gray">
-        <Subscribe />
-      </section>
     </>
   );
 };

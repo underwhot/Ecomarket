@@ -1,4 +1,4 @@
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import styles from './Partners.module.scss';
 
 import steps from '../../assets/partners/steps.svg';
@@ -10,7 +10,7 @@ import gSeries from '../../assets/partners/gSeries.svg';
 
 export const Partners = () => {
   return (
-    <Containter>
+    <Container>
       <ul className={styles.partnersList}>
         <li className={styles.partnersItem}><img src={steps} alt="logotype" /></li>
         <span className={styles.stick}></span>
@@ -24,6 +24,6 @@ export const Partners = () => {
         <span className={styles.stick}></span>
         <li className={styles.partnersItem}><img src={gSeries} alt="logotype" /></li>
       </ul>
-    </Containter>
+    </Container>
   );
 };

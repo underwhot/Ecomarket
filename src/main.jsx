@@ -9,6 +9,8 @@ import { Home } from './routes/Home.jsx';
 import { About } from './routes/About.jsx';
 import { Contacts } from './routes/Contacts.jsx';
 import { Blog } from './routes/Blog.jsx';
+import { Shop } from './routes/Shop.jsx';
+import { Product } from './routes/Product.jsx';
 
 import './null.css';
 import './index.scss';
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: 'shop',
+        element: <Shop />,
+      },
+      {
+        path: 'shop/product',
+        element: <Product />,
       },
       {
         path: 'about',

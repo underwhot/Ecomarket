@@ -8,7 +8,7 @@ export const menuItemsData = [
       },
       {
         title: 'Shop',
-        url: '/',
+        url: '/shop',
       },
       {
         title: 'Product',

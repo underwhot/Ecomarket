@@ -1,4 +1,4 @@
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import styles from './Advantages.module.scss';
 
 import shipping from '../../assets/advantages/shipping.svg';
@@ -8,7 +8,7 @@ import guarantee from '../../assets/advantages/guarantee.svg';
 
 export const Advantages = () => {
   return (
-    <Containter>
+    <Container>
       <div className={styles.root}>
         <ul className={styles.list}>
           <li className={styles.item}>
@@ -49,6 +49,6 @@ export const Advantages = () => {
           </li>
         </ul>
       </div>
-    </Containter>
+    </Container>
   );
 };

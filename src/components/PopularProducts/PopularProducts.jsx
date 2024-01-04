@@ -1,4 +1,4 @@
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import { SectionTop } from '../UI/SectionTop/SectionTop';
 import { ProductCard } from '../ProductCard/ProductCard';
 import styles from './PopularProducts.module.scss';
@@ -8,7 +8,7 @@ import { popularProducts } from '../../data/popularProductsData';
 
 export const PopularProducts = () => {
   return (
-    <Containter>
+    <Container>
       <SectionTop title="Popular Products" to="/" />
       <ul className={styles.productsList}>
         {popularProducts.map((product) => (
@@ -17,6 +17,6 @@ export const PopularProducts = () => {
           </li>
         ))}
       </ul>
-    </Containter>
+    </Container>
   );
 };

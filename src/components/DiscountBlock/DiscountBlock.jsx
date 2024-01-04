@@ -1,11 +1,11 @@
-import { Containter } from '../Container/Containter';
+import { Container } from '../Container/Container';
 import { LinkBtn } from '../UI/LinkBtn/LinkBtn';
 import styles from './DiscountBlock.module.scss';
 import bg from '../../assets/discountBlock/Discount Bannar.jpg';
 
 export const DiscountBlock = () => {
   return (
-    <Containter>
+    <Container>
       <div className={styles.block + ' ' + 'ibg'}>
         <img src={bg} alt="vegetables" />
         <div className={styles.content}>
@@ -20,6 +20,6 @@ export const DiscountBlock = () => {
           <LinkBtn url="/" text="Shop now" color="green" />
         </div>
       </div>
-    </Containter>
+    </Container>
   );
 };

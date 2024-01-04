@@ -1,7 +1,7 @@
-import React from 'react'
+import { Breadcrumbs } from '../components/UI/Breadcrumbs/Breadcrumbs';
 
 export const Contacts = () => {
   return (
-    <h1>OUR Contacts</h1>
-  )
-}
+    <Breadcrumbs />
+  );
+};

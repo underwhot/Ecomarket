@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Containter } from '../../Container/Containter';
+import { Container } from '../../Container/Container';
 import { Logotype } from '../../Logotype/Logotype';
 import { SearchBar } from '../../SearchBar/SearchBar';
 import { MobileNav } from '../MenuMobile/MobileNav/MobileNav';
@@ -14,7 +14,7 @@ export const HeaderTop = () => {
 
   return (
     <div className={styles['header-top']}>
-      <Containter>
+      <Container>
         <div className={styles['header-top__row']}>
           <div className={styles['header-top__column']}>
             <Logotype hideText={true} zIndex='99' />
@@ -136,7 +136,7 @@ export const HeaderTop = () => {
             </ul>
           </div>
         </div>
-      </Containter>
+      </Container>
     </div>
   );
 };
