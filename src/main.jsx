@@ -11,6 +11,7 @@ import { Contacts } from './routes/Contacts.jsx';
 import { Blog } from './routes/Blog.jsx';
 import { Shop } from './routes/Shop.jsx';
 import { Product } from './routes/Product.jsx';
+import { Cart } from './routes/Cart.jsx';
 
 import './null.css';
 import './index.scss';
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: 'shop',
         element: <Shop />,
+      },
+      {
+        path: 'cart',
+        element: <Cart />,
       },
       {
         path: 'shop/product',

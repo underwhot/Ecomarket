@@ -1,8 +1,32 @@
+.breadcrumbs {
+  padding: 48px 0;
+  background-image: url('../../../assets//breadcrumbs//breadcrumbs.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (max-width: 480px) {
+    padding: 24px 0;
+  }
+  &:not(:last-child) {
+    margin-bottom: 32px;
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
 .breadcrumbsList {
-  padding: 24px 0;
   display: flex;
   align-items: center;
   gap: 12px;
+  color: #999999;
+  line-height: 150%;
+  text-transform: capitalize;
+  overflow: auto;
+  white-space: nowrap;
+  &:hover {
+    cursor: default;
+  }
 }
 .breadcrumbsItem {
   &:not(:last-child) {
@@ -13,19 +37,19 @@
   }
 }
 .breadcrumbsLink {
-  line-height: 150%;
-  color: #666;
-  text-transform: capitalize;
   @media (any-hover: hover) {
     transition: color 0.3s ease;
     svg path {
       transition: fill 0.3s ease;
     }
     &:hover {
-      color: var(--success);
+      color: #ffffff;
       svg path {
-        fill: var(--success);
+        fill: #ffffff;
       }
     }
   }
+}
+.lastCrumb {
+  color: var(--success);
 }

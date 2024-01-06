@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { Advantages } from '../components/Advantages/Advantages';
 import { Banners } from '../components/Banners/Banners';
 import { Categories } from '../components/Categories/Categories';
@@ -6,14 +8,17 @@ import { Deals } from '../components/Deals/Deals';
 import { DiscountBlock } from '../components/DiscountBlock/DiscountBlock';
 import { Partners } from '../components/Partners/Partners';
 import { InstagramBlock } from '../components/InstagramBlock/InstagramBlock';
-import { Subscribe } from '../components/Subscribe/Subscribe';
 import { LatestNews } from '../components/LatestNews/LatestNews';
 import { Testimonials } from '../components/Testimonials/Testimonials';
 
 export const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <section className="section">
+      <section className="section section_mt">
         <Banners />
       </section>
       <section className="section section_layer-top section_mb">
