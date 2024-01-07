@@ -1,34 +1,66 @@
 import { Link } from 'react-router-dom';
 import styles from './CartProduct.module.scss';
+import { useDispatch } from 'react-redux';
+import {
+  setDeleteProduct,
+  setClearCart,
+  setPlusProduct,
+  setMinusProduct,
+} from '../../redux/slices/cartSlice';
 
-import img from '../../assets/products/Big Potatoes.jpg';
+export const CartProduct = ({ id, title, imgUrl, price, amount }) => {
+  const dispatch = useDispatch();
+  const subtotalPrice = price * amount;
 
-export const CartProduct = () => {
+  const handleDelete = (id) => {
+    dispatch(setDeleteProduct(id));
+  };
+
+  const handlePlus = (id) => {
+    dispatch(setPlusProduct(id));
+  };
+
+  const handleMinus = (id) => {
+    dispatch(setMinusProduct(id));
+  };
+
   return (
     <tr className={styles.product}>
       <td>
         <div className={styles.productTitle}>
           <Link to="/" className={styles.image + ' ' + 'ibg'}>
-            <img src={img} alt="" />
+            <img src={imgUrl} alt="" />
           </Link>
-          <Link to="/">Green Capsicum</Link>
+          <Link to="/">{title}</Link>
         </div>
       </td>
-      <td>$14.00</td>
+      <td>${price.toFixed(2)}</td>
       <td>
         <div className={styles.counter}>
-          <button type="button" className={styles.counterBtn}>
+          <button
+            onClick={() => handleMinus(id)}
+            type="button"
+            className={styles.counterBtn}
+          >
             -
           </button>
-          <div className={styles.counterNumber}>5</div>
-          <button type="button" className={styles.counterBtn}>
+          <div className={styles.counterNumber}>{amount}</div>
+          <button
+            onClick={() => handlePlus(id)}
+            type="button"
+            className={styles.counterBtn}
+          >
             +
           </button>
         </div>
       </td>
-      <td className={styles.productTotalPrice}>$70.00</td>
+      <td className={styles.productTotalPrice}>${subtotalPrice.toFixed(2)}</td>
       <td className={styles.productDelete}>
-        <button type="button" className={styles.DeleteBtn}>
+        <button
+          onClick={() => handleDelete(id)}
+          type="button"
+          className={styles.DeleteBtn}
+        >
           <svg
             width="10"
             height="10"

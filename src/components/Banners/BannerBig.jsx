@@ -1,6 +1,6 @@
 import { LinkBtn } from '../UI/LinkBtn/LinkBtn';
 import styles from './BannerBig.module.scss';
-import bg from '../../assets/banners/BannerBig_01.jpg';
+import bg from '/public/img/banners/BannerBig_01.jpg';
 
 export const BannerBig = () => {
   return (

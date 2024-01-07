@@ -1,5 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { StarRating } from '../UI/StarRating/StarRating';
+
+import {
+  setAddProduct,
+  selectCartProducts,
+} from '../../redux/slices/cartSlice';
+
 import styles from './ProductCard.module.scss';
 
 export const ProductCard = ({
@@ -11,6 +18,8 @@ export const ProductCard = ({
   oldPrice,
   rating,
 }) => {
+  const dispatch = useDispatch();
+
   let salePercent;
   if (oldPrice) {
     salePercent = Math.round((1 - price / oldPrice) * 100);
@@ -18,8 +27,20 @@ export const ProductCard = ({
 
   const handleAddToCart = (e) => {
     e.preventDefault();
-    console.log(title);
+    dispatch(
+      setAddProduct({
+        id,
+        title,
+        url,
+        imgUrl,
+        price,
+        oldPrice,
+        rating,
+        amount: 1,
+      })
+    );
   };
+
   const handleAddToFavourite = (e) => {
     e.preventDefault();
     console.log(title);

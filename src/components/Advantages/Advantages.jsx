@@ -1,10 +1,10 @@
 import { Container } from '../Container/Container';
 import styles from './Advantages.module.scss';
 
-import shipping from '../../assets/advantages/shipping.svg';
-import support from '../../assets/advantages/support.svg';
-import secure from '../../assets/advantages/secure.svg';
-import guarantee from '../../assets/advantages/guarantee.svg';
+import shipping from '/public/img/advantages/shipping.svg';
+import support from '/public/img/advantages/support.svg';
+import secure from '/public/img/advantages/secure.svg';
+import guarantee from '/public/img/advantages/guarantee.svg';
 
 export const Advantages = () => {
   return (

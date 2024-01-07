@@ -3,11 +3,11 @@ import { Logotype } from '../Logotype/Logotype';
 import { footerItemsData } from '../../data/footerItemsData';
 import { contactsData } from '../../data/contactsData';
 
-import ApplePay from '../../assets/payments/ApplePay.svg';
-import Visa from '../../assets/payments/Visa.svg';
-import Discover from '../../assets/payments/Discover.svg';
-import Mastercard from '../../assets/payments/Mastercard.svg';
-import Card from '../../assets/payments/Card.svg';
+import ApplePay from '/public/img/payments/ApplePay.svg';
+import Visa from '/public/img/payments/Visa.svg';
+import Discover from '/public/img/payments/Discover.svg';
+import Mastercard from '/public/img/payments/Mastercard.svg';
+import Card from '/public/img/payments/Card.svg';
 
 import styles from './Footer.module.scss';
 import { Link } from 'react-router-dom';

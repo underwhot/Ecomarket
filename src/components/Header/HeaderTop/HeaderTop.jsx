@@ -1,4 +1,11 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import {
+  selectTotalAmount,
+  selectTotalPrice,
+} from '../../../redux/slices/cartSlice';
+import { Link } from 'react-router-dom';
+
 import { Container } from '../../Container/Container';
 import { Logotype } from '../../Logotype/Logotype';
 import { SearchBar } from '../../SearchBar/SearchBar';
@@ -7,17 +14,18 @@ import { MobileNav } from '../MenuMobile/MobileNav/MobileNav';
 import { contactsData } from '../../../data/contactsData';
 
 import styles from './HeaderTop.module.scss';
-import { Link } from 'react-router-dom';
 
 export const HeaderTop = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const cartTotalAmount = useSelector(selectTotalAmount);
+  const cartTotalPrice = useSelector(selectTotalPrice);
 
   return (
     <div className={styles['header-top']}>
       <Container>
         <div className={styles['header-top__row']}>
           <div className={styles['header-top__column']}>
-            <Logotype hideText={true} zIndex='99' />
+            <Logotype hideText={true} zIndex="99" />
           </div>
           <div className={styles['header-top__column']}>
             <SearchBar showSearch={showSearch} setShowSearch={setShowSearch} />
@@ -107,7 +115,12 @@ export const HeaderTop = () => {
               </li>
               <li className={styles['header-top__item']}>
                 <Link to="/cart" className={styles['bag']}>
-                  <span className={styles['bag__counter']}>2</span>
+                  {cartTotalAmount > 0 && (
+                    <span className={styles['bag__counter']}>
+                      {cartTotalAmount}
+                    </span>
+                  )}
+
                   <svg
                     width="27"
                     height="26"
@@ -126,12 +139,14 @@ export const HeaderTop = () => {
                     <div className={styles['bag__text-top']}>
                       Shopping cart:
                     </div>
-                    <div className={styles['bag__text-bot']}>$57.00</div>
+                    <div className={styles['bag__text-bot']}>
+                      ${cartTotalPrice.toFixed(2)}
+                    </div>
                   </div>
                 </Link>
               </li>
               <li className={styles['header-top__item']}>
-                <MobileNav/>
+                <MobileNav />
               </li>
             </ul>
           </div>

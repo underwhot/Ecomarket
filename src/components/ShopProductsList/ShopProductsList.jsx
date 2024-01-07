@@ -1,38 +1,48 @@
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import {
+  fetchProducts,
+  selectIsLoadingViaAPI,
+  selectProducts,
+} from '../../redux/slices/productsSlice';
+
 import { Container } from '../Container/Container';
 import { ProductCard } from '../ProductCard/ProductCard';
 import Pagination from '@mui/material/Pagination';
-// import InputLabel from '@mui/material/InputLabel';
-// import MenuItem from '@mui/material/MenuItem';
-// import FormControl from '@mui/material/FormControl';
-// import Select from '@mui/material/Select';
-import Select from 'react-select';
 
 import styles from './ShopProductsList.module.scss';
 
-import { products as allProducts } from '../../data/productsData';
-
-const pageSize = 4;
-
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-];
+const pageSize = 8;
 
 export const ShopProductsList = () => {
   const [sortType, setSortType] = useState('');
-  const [products, setProducts] = useState([]);
+  const [shownProducts, setShownProducts] = useState([]);
   const [pagination, setPagination] = useState({
     count: 0,
     from: 0,
     to: pageSize,
   });
+  const products = useSelector(selectProducts);
+  const isLoading = useSelector(selectIsLoadingViaAPI);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const productsPaginated = allProducts.slice(pagination.from, pagination.to);
-    setProducts(productsPaginated);
-  }, [pagination.from, pagination.to]);
+    handleFetchProducts();
+  }, []);
+
+  const handleFetchProducts = () => {
+    dispatch(
+      fetchProducts({
+        url: 'https://654fb2ee358230d8f0cda05a.mockapi.io/products',
+      })
+    );
+  };
+
+  useEffect(() => {
+    const productsPaginated = products.slice(pagination.from, pagination.to);
+    setShownProducts(productsPaginated);
+  }, [pagination.from, pagination.to, products]);
 
   const hanglePagination = (e, page) => {
     const from = (page - 1) * pageSize;
@@ -41,24 +51,20 @@ export const ShopProductsList = () => {
     setPagination({ ...pagination, from, to });
   };
 
-  const handleSortType = (e) => {
-    setSortType(e.target.value);
-  };
-
   return (
     <div className={styles.products}>
       <Container>
         <div className={styles.top}>
           <div className={styles.results}>
-            <span>{allProducts.length}</span> Results found
+            <span>{products.length}</span> Results found
           </div>
           <div className={styles.filter}>
-            <Select options={options} />
+            {/* <Select options={options} /> */}
           </div>
         </div>
 
         <ul className={styles.productsList}>
-          {products.map((product) => (
+          {shownProducts.map((product) => (
             <li className={styles.productsItem} key={product.id}>
               <ProductCard {...product} />
             </li>
@@ -66,7 +72,7 @@ export const ShopProductsList = () => {
         </ul>
         <div className={styles.pagination}>
           <Pagination
-            count={Math.ceil(allProducts.length / pageSize)}
+            count={Math.ceil(products.length / pageSize)}
             onChange={hanglePagination}
           />
         </div>
