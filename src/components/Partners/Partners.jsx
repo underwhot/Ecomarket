@@ -1,12 +1,12 @@
 import { Container } from '../Container/Container';
 import styles from './Partners.module.scss';
 
-import steps from '/public/img/partners/steps.svg';
-import mango from '/public/img/partners/mango.svg';
-import foodNetwork from '/public/img/partners/foodNetwork.svg';
-import foodUk from '/public/img/partners/foodUk.svg';
-import bookOff from '/public/img/partners/bookOff.svg';
-import gSeries from '/public/img/partners/gSeries.svg';
+import steps from '/img/partners/steps.svg';
+import mango from '/img/partners/mango.svg';
+import foodNetwork from '/img/partners/foodNetwork.svg';
+import foodUk from '/img/partners/foodUk.svg';
+import bookOff from '/img/partners/bookOff.svg';
+import gSeries from '/img/partners/gSeries.svg';
 
 export const Partners = () => {
   return (

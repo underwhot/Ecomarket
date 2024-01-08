@@ -2,12 +2,12 @@ import { Container } from '../Container/Container';
 import { SectionTop } from '../UI/SectionTop/SectionTop';
 import styles from './InstagramBlock.module.scss';
 
-import post_01 from '/public/img/instagramPosts/Instagram Post.jpg';
-import post_02 from '/public/img/instagramPosts/Instagram Post-1.jpg';
-import post_03 from '/public/img/instagramPosts/Instagram Post-2.jpg';
-import post_04 from '/public/img/instagramPosts/Instagram Post-3.jpg';
-import post_05 from '/public/img/instagramPosts/Instagram Post-4.jpg';
-import post_06 from '/public/img/instagramPosts/Instagram Post-5.jpg';
+import post_01 from '/img/instagramPosts/Instagram Post.jpg';
+import post_02 from '/img/instagramPosts/Instagram Post-1.jpg';
+import post_03 from '/img/instagramPosts/Instagram Post-2.jpg';
+import post_04 from '/img/instagramPosts/Instagram Post-3.jpg';
+import post_05 from '/img/instagramPosts/Instagram Post-4.jpg';
+import post_06 from '/img/instagramPosts/Instagram Post-5.jpg';
 
 const instagrama = 'https://www.instagram.com/';
 

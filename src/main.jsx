@@ -6,7 +6,7 @@ import { store } from './redux/store';
 
 import App from './App.jsx';
 import { Root } from './routes/Root.jsx';
-import { ErrorPage } from './components/ErrorPage/ErrorPage.jsx';
+import { ErrorPage } from './routes/ErrorPage.jsx';
 import { Home } from './routes/Home.jsx';
 import { About } from './routes/About.jsx';
 import { Contacts } from './routes/Contacts.jsx';

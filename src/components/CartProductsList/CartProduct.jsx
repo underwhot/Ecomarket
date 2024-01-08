@@ -1,27 +1,27 @@
 import { Link } from 'react-router-dom';
-import styles from './CartProduct.module.scss';
 import { useDispatch } from 'react-redux';
 import {
   setDeleteProduct,
-  setClearCart,
   setPlusProduct,
   setMinusProduct,
 } from '../../redux/slices/cartSlice';
+
+import styles from './CartProduct.module.scss';
 
 export const CartProduct = ({ id, title, imgUrl, price, amount }) => {
   const dispatch = useDispatch();
   const subtotalPrice = price * amount;
 
-  const handleDelete = (id) => {
-    dispatch(setDeleteProduct(id));
+  const handleDelete = (id, price, amount) => {
+    dispatch(setDeleteProduct(id, price, amount));
   };
 
-  const handlePlus = (id) => {
-    dispatch(setPlusProduct(id));
+  const handlePlus = (id, price, amount) => {
+    dispatch(setPlusProduct(id, price, amount));
   };
 
-  const handleMinus = (id) => {
-    dispatch(setMinusProduct(id));
+  const handleMinus = (id, price, amount) => {
+    dispatch(setMinusProduct(id, price, amount));
   };
 
   return (
@@ -38,7 +38,8 @@ export const CartProduct = ({ id, title, imgUrl, price, amount }) => {
       <td>
         <div className={styles.counter}>
           <button
-            onClick={() => handleMinus(id)}
+            disabled={amount === 1 ? true : false}
+            onClick={() => handleMinus({ id, price, amount })}
             type="button"
             className={styles.counterBtn}
           >
@@ -46,7 +47,7 @@ export const CartProduct = ({ id, title, imgUrl, price, amount }) => {
           </button>
           <div className={styles.counterNumber}>{amount}</div>
           <button
-            onClick={() => handlePlus(id)}
+            onClick={() => handlePlus({ id, price, amount })}
             type="button"
             className={styles.counterBtn}
           >
@@ -54,10 +55,10 @@ export const CartProduct = ({ id, title, imgUrl, price, amount }) => {
           </button>
         </div>
       </td>
-      <td className={styles.productTotalPrice}>${subtotalPrice.toFixed(2)}</td>
+      <td className={styles.productTotalPrice}>$<span>{subtotalPrice.toFixed(2)}</span></td>
       <td className={styles.productDelete}>
         <button
-          onClick={() => handleDelete(id)}
+          onClick={() => handleDelete({ id, price, amount })}
           type="button"
           className={styles.DeleteBtn}
         >

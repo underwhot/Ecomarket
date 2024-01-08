@@ -1,5 +1,5 @@
 import styles from './BannerSmallTextCenter.module.scss';
-import bg from '/public/img/banners/BannerSmall_02.jpg';
+import bg from '/img/banners/BannerSmall_02.jpg';
 import { LinkBtn } from '../UI/LinkBtn/LinkBtn';
 
 export const BannerSmallTextCenter = () => {

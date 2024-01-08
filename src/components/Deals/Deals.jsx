@@ -5,9 +5,9 @@ import { Container } from '../Container/Container';
 import { Deal } from './Deal';
 import styles from './Deals.module.scss';
 
-import bgMonth from '/public/img/deals/Month.jpg';
-import bgMeat from '/public/img/deals/Meat.jpg';
-import bgFruit from '/public/img/deals/Fruit.jpg';
+import bgMonth from '/img/deals/Month.jpg';
+import bgMeat from '/img/deals/Meat.jpg';
+import bgFruit from '/img/deals/Fruit.jpg';
 
 export const Deals = () => {
   const currentDate = new Date();

@@ -1,6 +1,6 @@
 import { LinkBtn } from '../UI/LinkBtn/LinkBtn';
 import styles from './BannerSmallTextLeft.module.scss';
-import bg from '/public/img/banners/BannerSmall_01.jpg';
+import bg from '/img/banners/BannerSmall_01.jpg';
 
 export const BannerSmallTextLeft = () => {
   return (

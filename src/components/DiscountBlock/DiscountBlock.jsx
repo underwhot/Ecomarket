@@ -1,7 +1,7 @@
 import { Container } from '../Container/Container';
 import { LinkBtn } from '../UI/LinkBtn/LinkBtn';
 import styles from './DiscountBlock.module.scss';
-import bg from '/public/img/discountBlock/Discount Bannar.jpg';
+import bg from '/img/discountBlock/Discount Bannar.jpg';
 
 export const DiscountBlock = () => {
   return (

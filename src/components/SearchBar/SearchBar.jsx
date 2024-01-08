@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import styles from './SearchBar.module.scss';
 
-import cross from '/public/img/icons/cross.svg';
+import cross from '/img/icons/cross.svg';
 
 export const SearchBar = ({ showSearch, setShowSearch }) => {
   const [searchInput, setSearchInput] = useState('');
