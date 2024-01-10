@@ -1,10 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
-  selectTotalAmount,
+  selectCartProducts,
   selectTotalPrice,
 } from '../../../redux/slices/cartSlice';
-import { Link } from 'react-router-dom';
 
 import { Container } from '../../Container/Container';
 import { Logotype } from '../../Logotype/Logotype';
@@ -17,7 +17,7 @@ import styles from './HeaderTop.module.scss';
 
 export const HeaderTop = () => {
   const [showSearch, setShowSearch] = useState(false);
-  const cartTotalAmount = useSelector(selectTotalAmount);
+  const cartProducts = useSelector(selectCartProducts);
   const cartTotalPrice = useSelector(selectTotalPrice);
 
   return (
@@ -115,9 +115,9 @@ export const HeaderTop = () => {
               </li>
               <li className={styles['header-top__item']}>
                 <Link to="/cart" className={styles['bag']}>
-                  {cartTotalAmount > 0 && (
+                  {cartProducts.length > 0 && (
                     <span className={styles['bag__counter']}>
-                      {cartTotalAmount}
+                      {cartProducts.length}
                     </span>
                   )}
 

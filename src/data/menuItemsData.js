@@ -1,43 +1,38 @@
 export const menuItemsData = [
   {
-    title: 'Menu',
-    submenu: [
-      {
-        title: 'Home',
-        url: '/',
-      },
-      {
-        title: 'Shop',
-        url: '/shop',
-      },
-      {
-        title: 'Product',
-        url: '/',
-      },
-      {
-        title: 'Track Order',
-        url: '/',
-      },
-    ],
+    title: 'Home',
+    url: '/',
+  },
+  {
+    title: 'Shop',
+    url: '/shop',
   },
   {
     title: 'Categories',
     submenu: [
       {
-        title: 'Fruit\u00a0&\u00a0Vegetables',
-        url: '/',
+        title: 'Fruits',
+        url: '/shop/fruits',
       },
       {
-        title: 'Meat\u00a0&\u00a0Fish',
-        url: '/',
+        title: 'Vegetables',
+        url: '/shop/vegetables',
       },
       {
-        title: 'Bread\u00a0&\u00a0Bakery',
-        url: '/',
+        title: 'Meat',
+        url: '/shop/meat',
       },
       {
-        title: 'Beauty\u00a0&\u00a0Health',
-        url: '/',
+        title: 'Fish',
+        url: '/shop/fish',
+      },
+      {
+        title: 'Bread',
+        url: '/shop/bread',
+      },
+      {
+        title: 'Bakery',
+        url: '/shop/bakery',
       },
     ],
   },

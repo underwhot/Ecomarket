@@ -14,6 +14,9 @@ export const fetchProducts = createAsyncThunk(
       return res.data;
     } catch (error) {
       // thunkAPI.dispatch(setError(error.message));
+      if (error.response && error.response.status === 404) {
+        return [];
+      }
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -22,7 +25,11 @@ export const fetchProducts = createAsyncThunk(
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    setEmptyProductsList: (state, action) => {
+      state.products = [];
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state, action) => {
       state.isLoadingViaAPI = true;

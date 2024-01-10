@@ -33,6 +33,15 @@
       }
     }
   }
+
+  &.inCart {
+    .addToCartBtn {
+      background-color: var(--success);
+      & svg path {
+        fill: #fff;
+      }
+    }
+  }
 }
 .sale {
   pointer-events: none;
@@ -64,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 5px;
 }
 .title {
   color: #4d4d4d;

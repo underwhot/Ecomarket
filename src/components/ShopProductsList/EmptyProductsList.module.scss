@@ -1,0 +1,24 @@
+.page {
+  width: 100%;
+  padding: 30px 8px 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 120%;
+  span {
+    font-weight: 600;
+  }
+}
+.text {
+  line-height: 150%;
+  color: #808080;
+  max-width: 600px;
+}

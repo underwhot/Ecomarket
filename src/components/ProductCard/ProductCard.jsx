@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { StarRating } from '../UI/StarRating/StarRating';
 
 import {
-  setAddProduct,
+  setToggleToCart,
   selectCartProducts,
 } from '../../redux/slices/cartSlice';
+
+import { StarRating } from '../UI/StarRating/StarRating';
+import { isItemInArr } from '../../utils/isItemInArr';
 
 import styles from './ProductCard.module.scss';
 
@@ -19,6 +21,7 @@ export const ProductCard = ({
   rating,
 }) => {
   const dispatch = useDispatch();
+  const productsInCart = useSelector(selectCartProducts);
 
   let salePercent;
   if (oldPrice) {
@@ -28,10 +31,9 @@ export const ProductCard = ({
   const handleAddToCart = (e) => {
     e.preventDefault();
     dispatch(
-      setAddProduct({
+      setToggleToCart({
         id,
         title,
-        url,
         imgUrl,
         price,
         oldPrice,
@@ -47,7 +49,12 @@ export const ProductCard = ({
   };
 
   return (
-    <Link to={id} className={styles.product + ' '}>
+    <Link
+      to={`/shop/${id}`}
+      className={`${styles.product} ${
+        isItemInArr(id, productsInCart) ? styles.inCart : ''
+      }`}
+    >
       {oldPrice ? (
         <span className={styles.sale}>Sale {salePercent}%</span>
       ) : null}

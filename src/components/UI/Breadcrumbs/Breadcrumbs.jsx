@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Container } from '../../Container/Container';
 import styles from './Breadcrumbs.module.scss';
 
-export const Breadcrumbs = () => {
+export const Breadcrumbs = ({ title }) => {
   const location = useLocation();
   let currentLink = '';
 
@@ -13,16 +13,16 @@ export const Breadcrumbs = () => {
       currentLink += `/${crumb}`;
 
       if (crumb === 'cart') {
-       crumb = 'Shopping cart'
+        crumb = 'Shopping cart';
       }
-      
+
       if (i === arr.length - 1) {
         return (
           <li
             key={crumb}
             className={styles.breadcrumbsItem + ' ' + styles.lastCrumb}
           >
-            {crumb}
+            {title ? title : crumb}
           </li>
         );
       }
