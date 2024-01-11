@@ -1,27 +1,39 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+
+import { setDeleteProduct } from '../../redux/slices/favouritesSlice';
 import {
-  setDeleteProduct,
-  setPlusProduct,
-  setMinusProduct,
+  selectCartProducts,
+  setToggleToCart,
 } from '../../redux/slices/cartSlice';
+import { isItemInArr } from '../../utils/isItemInArr';
 
-import styles from './CartProduct.module.scss';
+import styles from './FavouriteProduct.module.scss';
 
-export const CartProduct = ({ id, title, imgUrl, price, amount }) => {
+export const FavouriteProduct = ({
+  id,
+  title,
+  imgUrl,
+  price,
+  oldPrice,
+  rating,
+}) => {
   const dispatch = useDispatch();
-  const subtotalPrice = price * amount;
+  const productsInCart = useSelector(selectCartProducts);
 
-  const handleDelete = (id, price, amount) => {
-    dispatch(setDeleteProduct(id, price, amount));
-  };
-
-  const handlePlus = (id, price, amount) => {
-    dispatch(setPlusProduct(id, price, amount));
-  };
-
-  const handleMinus = (id, price, amount) => {
-    dispatch(setMinusProduct(id, price, amount));
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    dispatch(
+      setToggleToCart({
+        id,
+        title,
+        imgUrl,
+        price,
+        oldPrice,
+        rating,
+        amount: 1,
+      })
+    );
   };
 
   return (
@@ -34,31 +46,34 @@ export const CartProduct = ({ id, title, imgUrl, price, amount }) => {
           <Link to={`/shop/${id}`}>{title}</Link>
         </div>
       </td>
-      <td>${price.toFixed(2)}</td>
       <td>
-        <div className={styles.counter}>
-          <button
-            disabled={amount === 1 ? true : false}
-            onClick={() => handleMinus({ id, price, amount })}
-            type="button"
-            className={styles.counterBtn}
-          >
-            -
-          </button>
-          <div className={styles.counterNumber}>{amount}</div>
-          <button
-            onClick={() => handlePlus({ id, price, amount })}
-            type="button"
-            className={styles.counterBtn}
-          >
-            +
-          </button>
+        <div className={styles.productPrice}>
+          <span className={styles.productPriceCurrent}>
+            ${price.toFixed(2)}
+          </span>
+          {oldPrice && (
+            <span className={styles.productPriceOld}>
+              ${oldPrice.toFixed(2)}
+            </span>
+          )}
         </div>
       </td>
-      <td className={styles.productTotalPrice}>$<span>{subtotalPrice.toFixed(2)}</span></td>
+
+      <td>
+        <button
+          className={`${styles.productAddToCartBtn} ${
+            isItemInArr(id, productsInCart) ? styles.remove : ''
+          }`}
+          type="button"
+          onClick={handleAddToCart}
+        >
+          {isItemInArr(id, productsInCart) ? 'Remove from cart' : 'Add to cart'}
+        </button>
+      </td>
+
       <td className={styles.productDelete}>
         <button
-          onClick={() => handleDelete({ id, price, amount })}
+          onClick={() => dispatch(setDeleteProduct({ id }))}
           type="button"
           className={styles.DeleteBtn}
         >

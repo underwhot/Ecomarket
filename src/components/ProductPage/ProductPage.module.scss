@@ -120,6 +120,9 @@
   font-weight: 600;
   color: #fff;
   background-color: var(--success);
+  & svg path {
+    transition: fill 0.3s ease;
+  }
   @media (any-hover: hover) {
     transition: background-color 0.3s ease;
     &:hover {
@@ -199,4 +202,10 @@
 .counterNumber {
   min-width: 22px;
   text-align: center;
+}
+.inFav {
+  background-color: rgba(234, 75, 72, 0.2);
+  & svg path {
+    fill: #ea4b48;
+  }
 }

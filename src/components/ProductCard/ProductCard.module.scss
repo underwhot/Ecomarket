@@ -42,6 +42,18 @@
       }
     }
   }
+
+  &.inFav {
+    .heart {
+      top: 10px;
+      opacity: 1;
+      visibility: visible;
+      background-color: rgba(234, 75, 72, 0.2);
+      & svg path {
+        fill: #ea4b48;
+      }
+    }
+  }
 }
 .sale {
   pointer-events: none;
@@ -139,11 +151,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: 1px solid #f2f2f2;
+  // border: 1px solid #f2f2f2;
   background-color: #fff;
   transition: background-color 0.3s ease, transform 0.15s ease,
     opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
-  // transition: all 0.3s ease;
 
   @media (any-hover: hover) {
     opacity: 0;

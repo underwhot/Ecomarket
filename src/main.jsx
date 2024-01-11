@@ -14,6 +14,8 @@ import { Blog } from './routes/Blog.jsx';
 import { Shop } from './routes/Shop.jsx';
 import { Product } from './routes/Product.jsx';
 import { Cart } from './routes/Cart.jsx';
+import { Favourites } from './routes/Favourites.jsx';
+
 
 import './null.css';
 import './index.scss';
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: 'cart',
         element: <Cart />,
+      },
+      {
+        path: 'favourites',
+        element: <Favourites />,
       },
       {
         path: 'shop/product',

@@ -1,10 +1,17 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setAddProduct } from '../../redux/slices/cartSlice';
+import {
+  selectFavouritesProducts,
+  setToggleToFavourites,
+} from '../../redux/slices/favouritesSlice';
+import { isItemInArr } from '../../utils/isItemInArr';
+
 import { Container } from '../Container/Container';
 import { StarRating } from '../UI/StarRating/StarRating';
 
 import styles from './ProductPage.module.scss';
-import { useDispatch } from 'react-redux';
-import { setAddProduct } from '../../redux/slices/cartSlice';
 
 export const ProductPage = ({
   id,
@@ -17,6 +24,7 @@ export const ProductPage = ({
   category,
 }) => {
   const [amount, setAmount] = useState(1);
+  const productsInFav = useSelector(selectFavouritesProducts);
   const dispatch = useDispatch();
 
   let salePercent;
@@ -46,6 +54,20 @@ export const ProductPage = ({
     );
 
     setAmount(1);
+  };
+
+  const handleAddToFavourite = (e) => {
+    dispatch(
+      setToggleToFavourites({
+        id,
+        title,
+        imgUrl,
+        price,
+        oldPrice,
+        rating,
+        amount: 1,
+      })
+    );
   };
 
   return (
@@ -119,7 +141,13 @@ export const ProductPage = ({
                     />
                   </svg>
                 </button>
-                <button type="button" className={styles.addToFavBtn}>
+                <button
+                  onClick={handleAddToFavourite}
+                  type="button"
+                  className={`${styles.addToFavBtn} ${
+                    isItemInArr(id, productsInFav) ? styles.inFav : ''
+                  }`}
+                >
                   <svg
                     width="20"
                     height="18"

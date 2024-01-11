@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Breadcrumbs } from '../components/UI/Breadcrumbs/Breadcrumbs';
-import { CartProductsList } from '../components/CartProductsList/CartProductsList';
+import { FavouritesProductsList } from '../components/FavouritesProductsList/FavouritesProductsList';
 
-export const Cart = () => {
+export const Favourites = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -10,7 +10,7 @@ export const Cart = () => {
   return (
     <>
       <Breadcrumbs />
-      <CartProductsList />
+      <FavouritesProductsList />
     </>
   );
 };

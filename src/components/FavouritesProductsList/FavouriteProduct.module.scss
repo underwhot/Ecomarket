@@ -1,0 +1,93 @@
+.productTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  @media (max-width: 1200px) {
+    // flex-wrap: wrap;
+  }
+  a {
+    @media (any-hover: hover) {
+      transition: color 0.3s ease;
+      &:hover {
+        color: var(--success);
+      }
+    }
+  }
+}
+.image {
+  width: 100px;
+  flex: 0 0 100px;
+  height: 100px;
+  @media (max-width: 768px) {
+    flex: 0 0 50px;
+    height: 50px;
+  }
+}
+.productTotalPrice {
+  white-space: nowrap;
+  span {
+    font-weight: 500;
+    display: inline-block;
+    min-width: 60px;
+  }
+}
+.productDelete {
+  text-align: right;
+}
+
+.DeleteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+
+  @media (any-hover: hover) {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.productAddToCartBtn {
+  border-radius: 43px;
+  display: flex;
+  // width: 100%;
+  min-width: 190px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  background-color: var(--success);
+  color: #fff;
+  @media (any-hover: hover) {
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: var(--successDark);
+    }
+  }
+}
+
+.productPrice {
+  display: flex;
+  gap: 5px;
+}
+.productPriceCurrent {
+  font-weight: 600;
+}
+.productPriceOld {
+  color: #999999;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.remove {
+  background-color: rgba(234, 75, 72, 0.2) !important;
+  color: #ea4b48;
+}

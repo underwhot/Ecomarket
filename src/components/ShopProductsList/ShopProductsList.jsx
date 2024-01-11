@@ -65,7 +65,7 @@ export const ShopProductsList = () => {
     }
 
     if (searchRequest) {
-      search = `search=${searchRequest}`;
+      search = `title=${searchRequest}`;
     }
 
     dispatch(

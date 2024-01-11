@@ -5,23 +5,20 @@ import {
   setToggleToCart,
   selectCartProducts,
 } from '../../redux/slices/cartSlice';
+import {
+  selectFavouritesProducts,
+  setToggleToFavourites,
+} from '../../redux/slices/favouritesSlice';
 
 import { StarRating } from '../UI/StarRating/StarRating';
 import { isItemInArr } from '../../utils/isItemInArr';
 
 import styles from './ProductCard.module.scss';
 
-export const ProductCard = ({
-  id,
-  title,
-  url,
-  imgUrl,
-  price,
-  oldPrice,
-  rating,
-}) => {
+export const ProductCard = ({ id, title, imgUrl, price, oldPrice, rating }) => {
   const dispatch = useDispatch();
   const productsInCart = useSelector(selectCartProducts);
+  const productsInFav = useSelector(selectFavouritesProducts);
 
   let salePercent;
   if (oldPrice) {
@@ -45,7 +42,17 @@ export const ProductCard = ({
 
   const handleAddToFavourite = (e) => {
     e.preventDefault();
-    console.log(title);
+    dispatch(
+      setToggleToFavourites({
+        id,
+        title,
+        imgUrl,
+        price,
+        oldPrice,
+        rating,
+        amount: 1,
+      })
+    );
   };
 
   return (
@@ -53,7 +60,7 @@ export const ProductCard = ({
       to={`/shop/${id}`}
       className={`${styles.product} ${
         isItemInArr(id, productsInCart) ? styles.inCart : ''
-      }`}
+      } ${isItemInArr(id, productsInFav) ? styles.inFav : ''}`}
     >
       {oldPrice ? (
         <span className={styles.sale}>Sale {salePercent}%</span>
@@ -61,7 +68,7 @@ export const ProductCard = ({
       <button
         type="button"
         className={styles.heart}
-        onClick={(e) => handleAddToFavourite(e)}
+        onClick={handleAddToFavourite}
       >
         <svg
           width="18"
