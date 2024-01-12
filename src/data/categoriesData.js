@@ -37,7 +37,7 @@ export const categories = [
   },
   {
     id: 'id-7',
-    title: 'Bread & Bakery',
+    title: 'Bakery',
     url: '/',
     imgUrl: '/img/popularCategories/Bread & Bakery.jpg',
   },

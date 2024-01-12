@@ -55,7 +55,7 @@ export const LatestNews = () => {
 
   return (
     <Container>
-      <SectionTop title="Latest News" to="/" />
+      <SectionTop title="Latest News" to="/news" />
       <div className={styles.slider}>
         <swiper-container ref={swiperRef} init="false">
           {news.map((item) => (

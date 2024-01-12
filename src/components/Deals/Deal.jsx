@@ -31,7 +31,7 @@ export const Deal = ({
         ) : null}
         {deadline ? <CountdownTimer deadline={deadline} /> : null}
 
-        <LinkBtn to={url} text="Shop Now" color="white" />
+        <LinkBtn url={url} text="Shop Now" color="white" />
       </div>
     </div>
   );

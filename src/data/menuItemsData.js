@@ -12,36 +12,28 @@ export const menuItemsData = [
     submenu: [
       {
         title: 'Fruits',
-        url: '/shop/fruits',
+        url: 'shop/categories/fruits',
       },
       {
         title: 'Vegetables',
-        url: '/shop/vegetables',
+        url: 'shop/categories/vegetables',
       },
       {
         title: 'Meat',
-        url: '/shop/meat',
+        url: 'shop/categories/meat',
       },
       {
         title: 'Fish',
-        url: '/shop/fish',
-      },
-      {
-        title: 'Bread',
-        url: '/shop/bread',
+        url: 'shop/categories/fish',
       },
       {
         title: 'Bakery',
-        url: '/shop/bakery',
+        url: 'shop/categories/bakery',
       },
     ],
   },
   {
-    title: 'Blog',
-    url: '/blog',
-  },
-  {
-    title: 'About',
+    title: 'About Us',
     url: '/about',
   },
   {

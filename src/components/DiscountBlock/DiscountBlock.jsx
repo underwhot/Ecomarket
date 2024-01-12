@@ -17,7 +17,7 @@ export const DiscountBlock = () => {
             Free on all your order, Free Shipping and 30 days money-back
             guarantee
           </p>
-          <LinkBtn url="/" text="Shop now" color="green" />
+          <LinkBtn url="/shop" text="Shop now" color="green" />
         </div>
       </div>
     </Container>

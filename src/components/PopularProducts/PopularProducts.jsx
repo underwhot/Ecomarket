@@ -46,7 +46,7 @@ export const PopularProducts = () => {
 
   return (
     <Container>
-      <SectionTop title="Popular Products" to="/" />
+      <SectionTop title="Popular Products" to="/shop" />
       <ul className={styles.productsList}>
         {isLoading ? preloader : renderProducts}
       </ul>

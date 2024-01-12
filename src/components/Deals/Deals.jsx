@@ -67,7 +67,7 @@ export const Deals = () => {
         <swiper-container ref={swiperRef} init="false">
           <swiper-slide>
             <Deal
-              url="/"
+              url="/shop"
               bg={bgMonth}
               desc="Best Deals"
               title="Sale of the Month"
@@ -76,7 +76,7 @@ export const Deals = () => {
           </swiper-slide>
           <swiper-slide>
             <Deal
-              url="/"
+              url="/shop"
               bg={bgMeat}
               desc="85% Fat Free"
               title="Low-Fat Meat"
@@ -86,7 +86,7 @@ export const Deals = () => {
           </swiper-slide>
           <swiper-slide>
             <Deal
-              url="/"
+              url="/shop"
               bg={bgFruit}
               desc="Summer Sale"
               title="100% Fresh Fruit"

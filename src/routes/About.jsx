@@ -1,5 +1,17 @@
-import React from 'react';
+import { useEffect } from 'react';
+
+import { Breadcrumbs } from '../components/UI/Breadcrumbs/Breadcrumbs';
+import { AboutUs } from '../components/AboutUs/AboutUs';
 
 export const About = () => {
-  return <h1>About page content</h1>;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <Breadcrumbs />
+      <AboutUs />
+    </>
+  );
 };

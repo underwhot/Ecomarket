@@ -4,19 +4,19 @@ export const footerItemsData = [
     submenu: [
       {
         subtitle: 'My Account',
-        url: '/',
+        url: '/account',
       },
       {
         subtitle: 'Order History',
-        url: '/',
+        url: '/history',
       },
       {
         subtitle: 'Shoping Cart',
-        url: '/',
+        url: '/cart',
       },
       {
-        subtitle: 'Wishlist',
-        url: '/',
+        subtitle: 'Favourites',
+        url: '/favourites',
       },
     ],
   },
@@ -25,19 +25,19 @@ export const footerItemsData = [
     submenu: [
       {
         subtitle: 'Contact',
-        url: '/',
+        url: '/contacts',
       },
       {
         subtitle: 'Faqs',
-        url: '/',
+        url: '/faq',
       },
       {
         subtitle: 'Terms & Condition',
-        url: '/',
+        url: '/terms',
       },
       {
         subtitle: 'Privacy Policy',
-        url: '/',
+        url: '/privacy',
       },
     ],
   },
@@ -46,19 +46,19 @@ export const footerItemsData = [
     submenu: [
       {
         subtitle: 'About',
-        url: '/',
+        url: '/about',
       },
       {
         subtitle: 'Shop',
-        url: '/',
+        url: '/shop',
       },
       {
         subtitle: 'Product',
-        url: '/',
+        url: '/product',
       },
       {
         subtitle: 'Track Order',
-        url: '/',
+        url: '/track',
       },
     ],
   },
@@ -66,20 +66,24 @@ export const footerItemsData = [
     title: 'Categories',
     submenu: [
       {
-        subtitle: 'Fruit &\u00a0Vegetables',
-        url: '/',
+        subtitle: 'Fruit',
+        url: '/fruits',
       },
       {
-        subtitle: 'Meat &\u00a0Fish',
-        url: '/',
+        subtitle: 'Vegetables',
+        url: '/vegetables',
       },
       {
-        subtitle: 'Bread &\u00a0Bakery',
-        url: '/',
+        subtitle: 'Meat',
+        url: '/meat',
       },
       {
-        subtitle: 'Beauty &\u00a0Health',
-        url: '/',
+        subtitle: 'Fish',
+        url: '/fish',
+      },
+      {
+        subtitle: 'Bakery',
+        url: '/bakery',
       },
     ],
   },

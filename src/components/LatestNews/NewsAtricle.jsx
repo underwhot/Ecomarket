@@ -21,7 +21,7 @@ export const NewsAtricle = ({ url, title, imgUrl, date, text }) => {
         {title}
       </Link>
       <p className={styles.text}>{slicedText}</p>
-      <LinkBtn text="Read More" to={url} />
+      <LinkBtn text="Read More" url={url} />
     </div>
   );
 };
