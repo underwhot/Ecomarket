@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Container } from '../Container/Container';
 import { LinkBtn } from '../UI/LinkBtn/LinkBtn';
 import styles from './PageNotFound.module.scss';
 
