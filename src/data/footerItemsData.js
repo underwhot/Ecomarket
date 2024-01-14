@@ -67,23 +67,23 @@ export const footerItemsData = [
     submenu: [
       {
         subtitle: 'Fruit',
-        url: '/fruits',
+        url: '/shop/categories/fruits',
       },
       {
         subtitle: 'Vegetables',
-        url: '/vegetables',
+        url: '/shop/categories/vegetables',
       },
       {
         subtitle: 'Meat',
-        url: '/meat',
+        url: '/shop/categories/meat',
       },
       {
         subtitle: 'Fish',
-        url: '/fish',
+        url: '/shop/categories/fish',
       },
       {
         subtitle: 'Bakery',
-        url: '/bakery',
+        url: '/shop/categories/bakery',
       },
     ],
   },

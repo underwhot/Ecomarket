@@ -4,11 +4,12 @@
   justify-content: space-between;
   gap: 15px;
   margin-bottom: 32px;
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     margin-bottom: 24px;
   }
 }
 .title {
+  text-transform: capitalize;
   font-size: 32px;
   font-weight: 600;
   line-height: 120%;

@@ -58,7 +58,7 @@ export const Categories = () => {
 
   return (
     <Container>
-      <SectionTop title="Shop by Categories" to="/" />
+      <SectionTop title="Shop by Categories" to="/shop/categories" />
       <div className={styles.slider}>
         <swiper-container ref={swiperRef} init="false">
           {categories.map((category) => (

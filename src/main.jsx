@@ -15,7 +15,7 @@ import { Shop } from './routes/Shop.jsx';
 import { Product } from './routes/Product.jsx';
 import { Cart } from './routes/Cart.jsx';
 import { Favourites } from './routes/Favourites.jsx';
-
+import { Categories } from './routes/Categories.jsx';
 
 import './null.css';
 import './index.scss';
@@ -34,16 +34,20 @@ const router = createBrowserRouter([
         element: <Shop />,
       },
       {
+        path: 'shop/search',
+        element: <Shop />,
+      },
+      {
+        path: 'shop/categories/:category',
+        element: <Shop />,
+      },
+      {
         path: 'cart',
         element: <Cart />,
       },
       {
         path: 'favourites',
         element: <Favourites />,
-      },
-      {
-        path: 'shop/product',
-        element: <Product />,
       },
       {
         path: 'about',
@@ -56,6 +60,14 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog />,
+      },
+      {
+        path: 'shop/product',
+        element: <Product />,
+      },
+      {
+        path: 'shop/categories',
+        element: <Categories />,
       },
       {
         path: 'shop/:id',

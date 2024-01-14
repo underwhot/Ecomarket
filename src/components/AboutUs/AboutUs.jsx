@@ -3,37 +3,37 @@ import { SectionTop } from '../UI/SectionTop/SectionTop';
 
 import styles from './AboutUs.module.scss';
 
-import bg from '../../../public/img/about/bg.jpg';
-import farmer from '../../../public/img/about/farmer.png';
+import bg from '/img/about/bg.jpg';
+import farmer from '/img/about/farmer.png';
 
 const advantages = [
   {
-    img: '../../../public/img/about/advantages/01.svg',
+    img: '/img/about/advantages/01.svg',
     title: '100% Organic food',
     text: '100% healthy & Fresh food.',
   },
   {
-    img: '../../../public/img/about/advantages/02.svg',
+    img: '/img/about/advantages/02.svg',
     title: 'Great Support 24/7',
     text: 'Instant access to Contact',
   },
   {
-    img: '../../../public/img/about/advantages/03.svg',
+    img: '/img/about/advantages/03.svg',
     title: 'Customer Feedback',
     text: 'Our happy customer',
   },
   {
-    img: '../../../public/img/about/advantages/04.svg',
+    img: '/img/about/advantages/04.svg',
     title: '100% Sucure Payment',
     text: 'We ensure your money is save',
   },
   {
-    img: '../../../public/img/about/advantages/05.svg',
+    img: '/img/about/advantages/05.svg',
     title: 'Free Shipping',
     text: 'Free shipping with discount',
   },
   {
-    img: '../../../public/img/about/advantages/06.svg',
+    img: '/img/about/advantages/06.svg',
     title: 'Super Fresh Food',
     text: 'Super healthy & Fresh food.',
   },

@@ -33,7 +33,7 @@ export const SearchBar = ({ showSearch, setShowSearch }) => {
 
     if (searchValue.trim()) {
       dispatch(setSearchRequest(searchValue.trim()));
-      navigate('/shop');
+      navigate('/shop/search');
       setShowSearch(false);
       return;
     }

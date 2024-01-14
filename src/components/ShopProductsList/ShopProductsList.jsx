@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import {
   fetchProducts,
@@ -11,6 +12,8 @@ import {
   selectSort,
   setSort,
   setClearAllFilters,
+  selectCategory,
+  setCategory,
 } from '../../redux/slices/filterSlice';
 
 import Pagination from '@mui/material/Pagination';
@@ -40,19 +43,29 @@ export const ShopProductsList = () => {
     to: pageSize,
   });
   const sortType = useSelector(selectSort);
+  const categoryType = useSelector(selectCategory);
   const products = useSelector(selectProducts);
   const searchRequest = useSelector(selectSearchRequest);
   const isLoading = useSelector(selectIsLoadingViaAPI);
   const dispatch = useDispatch();
+  const params = useParams();
+
+  console.log(params.category);
+
+  useEffect(() => {
+    dispatch(setCategory(params.category));
+    window.scrollTo(0, 0);
+  }, [params]);
 
   useEffect(() => {
     handleFetchProducts();
-  }, [sortType, searchRequest]);
+  }, [sortType, searchRequest, categoryType]);
 
   const handleFetchProducts = () => {
     let sort = '';
     let order = 'order=asc';
     let search = '';
+    let category = '';
 
     if (sortType.includes('Price')) {
       sort = 'sortBy=price';
@@ -68,9 +81,13 @@ export const ShopProductsList = () => {
       search = `title=${searchRequest}`;
     }
 
+    if (categoryType) {
+      category = `category=${categoryType}`;
+    }
+
     dispatch(
       fetchProducts(
-        `https://654fb2ee358230d8f0cda05a.mockapi.io/products?${sort}&${order}&${search}`
+        `https://654fb2ee358230d8f0cda05a.mockapi.io/products?${category}&${sort}&${order}&${search}`
       )
     );
   };
