@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Breadcrumbs } from '../components/UI/Breadcrumbs/Breadcrumbs';
 import { CartProductsList } from '../components/CartProductsList/CartProductsList';
 
-export const Cart = () => {
+const Cart = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -14,3 +14,5 @@ export const Cart = () => {
     </>
   );
 };
+
+export default Cart;

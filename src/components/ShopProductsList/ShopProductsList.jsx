@@ -50,8 +50,6 @@ export const ShopProductsList = () => {
   const dispatch = useDispatch();
   const params = useParams();
 
-  console.log(params.category);
-
   useEffect(() => {
     dispatch(setCategory(params.category));
     window.scrollTo(0, 0);

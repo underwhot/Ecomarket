@@ -1,21 +1,30 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { lazy } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 
-import App from './App.jsx';
 import { Root } from './routes/Root.jsx';
-import { ErrorPage } from './routes/ErrorPage.jsx';
-import { Home } from './routes/Home.jsx';
-import { About } from './routes/About.jsx';
-import { Contacts } from './routes/Contacts.jsx';
-import { Blog } from './routes/Blog.jsx';
-import { Shop } from './routes/Shop.jsx';
-import { Product } from './routes/Product.jsx';
-import { Cart } from './routes/Cart.jsx';
-import { Favourites } from './routes/Favourites.jsx';
-import { Categories } from './routes/Categories.jsx';
+// import { ErrorPage } from './routes/ErrorPage.jsx';
+// import { Home } from './routes/Home.jsx';
+// import { About } from './routes/About.jsx';
+// import { Contacts } from './routes/Contacts.jsx';
+// import { Shop } from './routes/Shop.jsx';
+// import { Product } from './routes/Product.jsx';
+// import { Cart } from './routes/Cart.jsx';
+// import { Favourites } from './routes/Favourites.jsx';
+// import { Categories } from './routes/Categories.jsx';
+
+const Home = lazy(() => import('./routes/Home.jsx'));
+const ErrorPage = lazy(() => import('./routes/ErrorPage.jsx'));
+const Contacts = lazy(() => import('./routes/Contacts.jsx'));
+const About = lazy(() => import('./routes/About.jsx'));
+const Shop = lazy(() => import('./routes/Shop.jsx'));
+const Cart = lazy(() => import('./routes/Cart.jsx'));
+const Product = lazy(() => import('./routes/Product.jsx'));
+const Favourites = lazy(() => import('./routes/Favourites.jsx'));
+const Categories = lazy(() => import('./routes/Categories.jsx'));
+
 
 import './null.css';
 import './index.scss';
@@ -56,10 +65,6 @@ const router = createBrowserRouter([
       {
         path: 'contacts',
         element: <Contacts />,
-      },
-      {
-        path: 'blog',
-        element: <Blog />,
       },
       {
         path: 'shop/product',

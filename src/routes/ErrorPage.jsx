@@ -7,7 +7,7 @@ import { Subscribe } from '../components/Subscribe/Subscribe';
 import { Breadcrumbs } from '../components/UI/Breadcrumbs/Breadcrumbs'
 import { PageNotFound } from '../components/PageNotFound/PageNotFound';
 
-export const ErrorPage = () => {
+const ErrorPage = () => {
   const error = useRouteError();
   console.error(error);
 
@@ -27,3 +27,5 @@ export const ErrorPage = () => {
     </>
   );
 };
+
+export default ErrorPage;

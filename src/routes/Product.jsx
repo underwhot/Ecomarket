@@ -7,7 +7,7 @@ import { Breadcrumbs } from '../components/UI/Breadcrumbs/Breadcrumbs';
 import { RelatedProducts } from '../components/RelatedProducts/RelatedProducts';
 import { ProductPageSkeleton } from '../components/ProductPage/ProductPageSkeleton';
 
-export const Product = () => {
+const Product = () => {
   const [isLoadiong, setIsLoading] = useState(true);
   const [product, setProduct] = useState({});
   const { id } = useParams();
@@ -44,3 +44,5 @@ export const Product = () => {
     </>
   );
 };
+
+export default Product;

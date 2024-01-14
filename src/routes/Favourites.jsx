@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Breadcrumbs } from '../components/UI/Breadcrumbs/Breadcrumbs';
 import { FavouritesProductsList } from '../components/FavouritesProductsList/FavouritesProductsList';
 
-export const Favourites = () => {
+const Favourites = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -14,3 +14,5 @@ export const Favourites = () => {
     </>
   );
 };
+
+export default Favourites;

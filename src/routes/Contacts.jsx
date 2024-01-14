@@ -4,7 +4,7 @@ import { ContactItems } from '../components/ContactItems/ContactItems';
 import { Map } from '../components/Map/Map';
 import { Breadcrumbs } from '../components/UI/Breadcrumbs/Breadcrumbs';
 
-export const Contacts = () => {
+const Contacts = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,3 +17,5 @@ export const Contacts = () => {
     </>
   );
 };
+
+export default Contacts;

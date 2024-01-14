@@ -11,7 +11,7 @@ import { InstagramBlock } from '../components/InstagramBlock/InstagramBlock';
 import { LatestNews } from '../components/LatestNews/LatestNews';
 import { Testimonials } from '../components/Testimonials/Testimonials';
 
-export const Home = () => {
+const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -51,3 +51,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

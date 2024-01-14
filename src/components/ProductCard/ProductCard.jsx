@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
 import {
   setToggleToCart,
@@ -55,6 +56,10 @@ export const ProductCard = ({ id, title, imgUrl, price, oldPrice, rating }) => {
     );
   };
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <Link
       to={`/shop/${id}`}
@@ -85,8 +90,9 @@ export const ProductCard = ({ id, title, imgUrl, price, oldPrice, rating }) => {
           />
         </svg>
       </button>
-      <div className={`${styles.image} ibg`}>
-        <img src={imgUrl} alt={title} />
+      <div ref={ref} className={`${styles.image} ibg`}>
+        {/* {inView ? <img src={imgUrl} alt={title} /> : <div className={styles.lazy}></div>} */}
+        <img src={inView ? imgUrl : null} alt={title} />
       </div>
       <div className={styles.content}>
         <div className={styles.texts}>
